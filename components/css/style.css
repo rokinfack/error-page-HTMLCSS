@@ -1,0 +1,236 @@
+*,
+::after,
+::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 15%;
+    margin-top: -30px;
+    background: white;
+    text-align: center;
+    align-items: center;
+    padding: 1% 2%;
+    box-shadow: inset 0px -1px 0px gray;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.logo img {
+    width: 20%;
+}
+
+.navLink {
+    display: flex;
+    margin-right: 10%;
+    align-items: center;
+    text-align: center;
+}
+
+.navLink_container{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.navLink_container a{
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.user_account {
+    width: 10%;
+    height: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_account img {
+    display: none;
+}
+
+.user_account a {
+    display: block;
+    border-radius: 40%;
+    background: rgb(11, 16, 5);
+    padding: 10px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+
+}
+/* they main StyleSheet */
+
+main{
+    position: sticky;
+    top: -15%;
+    margin: 25px auto;
+}
+ .errorMessage{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 600px;
+    background-image: url(https://tse2.mm.bing.net/th?id=OIP.THnFOA_lyklNfhyWfubohQHaE7&pid=Api&P=0);
+
+}
+.message{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+
+.message p{
+    background: white;
+    font-size: 2rem;
+    padding: 5px;
+}
+.codeError{
+  position: absolute;
+  margin-top: 4%;
+  top: 40%; 
+  left: 45%;
+}
+.codeError p{
+    font-size:7rem;
+    background: transparent;
+    color: red;
+}
+.return{
+    position: absolute;
+    top: 70%;
+    left: 42%;
+
+}
+.return a{
+    background: gold;
+    font-size: 2rem;
+    padding: 1rem;
+    text-decoration: none;
+} 
+
+
+@media (max-width:900px) {
+    nav {
+        position: fixed;
+        padding: 10px 15px;
+    }
+   
+
+    .logo {
+        order: 2;
+        width: 50%;
+    }
+
+    .user_account {
+        order: 3;
+    }
+
+    .navLink {
+        border-right: 1px solid;
+        order: 1;
+    }
+
+    .hamburger {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        /* background: black; */
+    }
+
+    .hamburger span {
+        display: block;
+        position: absolute;
+        flex-direction: column;
+        border: 1px solid black;
+        pointer-events: none;
+        width: 100%;
+        height: 2px;
+        transition: opacity 0.3s .15s ease-out;
+
+    }
+
+    .hamburger span:nth-child(1) {
+        transform: translateY(7px);
+        transition: transform 0.5s ease-in-out;
+
+    }
+
+    .hamburger span:nth-child(3) {
+        transform: translateY(-7px);
+        transition: transform 0.5s ease-in-out;
+
+    }
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(0)rotate(135deg);
+    }
+
+  
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(0)rotate(-135deg);
+    }
+
+    .open {
+        transform: translate(0%) !important ;
+    }
+    .user_account a {
+        display: none
+    }
+    .navLink_container{
+        position: absolute;
+        display: flex;
+        align-items: flex-start;
+        background: white;
+        left: 0px;
+        top: 100%;
+        transition: transform 0.3s ease-out;
+         transform: translate(-100%);
+        flex-direction: column;
+
+    }
+    .navLink_container ul li a{
+        display: block;
+        padding: 0%;
+        margin: 0%;
+        position: relative;
+    }
+
+    .user_account img {
+        display: flex;
+        width: 30px;
+    }
+
+    .message p{
+        font-size: 1rem;
+    }
+    .return a{
+        text-decoration: none;
+        font-size: 1rem;
+    }
+   
+  
+}
